@@ -3,16 +3,27 @@ import "./App.css";
 import { BiShowAlt, BiHide } from "react-icons/bi";
 
 function App() {
+  //initial state of form data
   const initialData = {
     email: "",
     password: ""
   };
+  
+  //state for submit button enable/disable
   const [visible, setVisible] = useState(true);
+
+  //state for accepting form input
   const [formData, setFormData] = useState(initialData);
+
+  //state for password visibility
   const [passVisible, setPassVisible] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    setFormData(initialData);
   };
 
   const showPassword = () => {
@@ -28,10 +39,6 @@ function App() {
       setVisible(true);
     }
   }, [formData]);
-
-  const handleSubmit = () => {
-    //write your code here
-  };
 
   return (
     <div className="form-div">
