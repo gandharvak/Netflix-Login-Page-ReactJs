@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="form-div">
-      <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" />
+      <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="netflix-logo"/>
       <h1>Login </h1>
       <div className="form-element">
         <input
@@ -52,14 +52,14 @@ function App() {
       </div>
       <div className="form-element">
         <input
-          type={passVisible == true ? "text" : "password"}
+          type={passVisible === true ? "text" : "password"}
           name="password"
           onChange={(e) => handleChange(e)}
           value={formData.password}
           placeholder="Password"
         />
         <div className="password-visibility">
-          {passVisible == true ? (
+          {passVisible === true ? (
             <BiHide className="visibility-btn" onClick={showPassword} />
           ) : (
             <BiShowAlt className="visibility-btn" onClick={showPassword} />
