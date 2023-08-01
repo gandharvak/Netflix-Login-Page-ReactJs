@@ -54,13 +54,15 @@ function App() {
           value={formData.password}
           placeholder="Password"
         />
-        <div className="password-visibility">
+        { formData.password.length > 0 &&
+          <div className="password-visibility">
           {passVisible === true ? (
             <BiHide className="visibility-btn" onClick={showPassword} />
           ) : (
             <BiShowAlt className="visibility-btn" onClick={showPassword} />
           )}
         </div>
+        }
       </div>
       <div className="form-element">
         <button onClick={handleSubmit} disabled={visible}>
