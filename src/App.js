@@ -21,16 +21,12 @@ function App() {
     });
   };
 
-  const visibility = () => {
-    if (formData.email.length > 0 && formData.password.length > 0) {
+  useEffect(() => {
+      if (formData.email.length > 0 && formData.password.length > 0) {
       setVisible(false);
     } else {
       setVisible(true);
     }
-  };
-
-  useEffect(() => {
-    visibility();
   }, [formData]);
 
   const handleSubmit = () => {
